@@ -39,5 +39,8 @@ process RUN_FEATURECOUNTS {
     // and then pulls out the GeneID and counts column from the featureCounts
     // output. 
 
+    // unlike the repo version of RUN_FEATURECOUNTS, this version does not
+    // use the -p flag to specify paired-end reads. This is because the
+    // featureCounts tool does not require this flag for single-end reads.
 
 }
