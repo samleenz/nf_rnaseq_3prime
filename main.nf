@@ -4,14 +4,17 @@
 // TPH, ONJCRI
 
 
-// load modules
+// load shared modules
 include { RUN_FASTQC } from "${params.module_dir}/fastqc"
 include { RUN_MULTIQC } from "${params.module_dir}/multiqc"
-include { RUN_TRIM_READS_SE } from "./modules/cutadapt-se" 
 include { RUN_STAR_GENOME_GENERATE } from "${params.module_dir}/star-index" 
+include { RUN_FEATURECOUNTS_COMBINE } from "${params.module_dir}/featureCounts-combine"
+
+
+include { RUN_TRIM_READS_SE } from "./modules/cutadapt-se" 
 include { RUN_STAR_ALIGN_SE } from "./modules/star-align-se"
 include { RUN_STAR_ALIGN_SE as RUN_STAR_ALIGN_SE_2PASS } from "./modules/star-align-se"
-
+include { RUN_FEATURECOUNTS_SE } from "./modules/featureCounts-se"
 
 // workflow
 workflow {
@@ -64,7 +67,7 @@ workflow {
 
     // FEATURECOUNTS -------- 
 
-    (fc_counts_ch, fc_logs_ch) = RUN_FEATURECOUNTS(
+    (fc_counts_ch, fc_logs_ch) = RUN_FEATURECOUNTS_SE(
         star_align_pass2_ch,
         params.gtf
     )
@@ -72,10 +75,7 @@ workflow {
     fc_combine_ch = RUN_FEATURECOUNTS_COMBINE(fc_counts_ch.collect())
 
     make_se_ch = RUN_SUMMARIZED_EXPERIMENT(
-        fc_combine_ch//,
-        // params.samplesheet,
-        // params.gtf,
-        // params.project
+        fc_combine_ch
     )
 
     // MULTIQC --------------
