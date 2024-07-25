@@ -11,7 +11,7 @@ email: samuel.lee@onjcri.org.au
 
 module load nextflow
 
-nextflow run main.nf --params-file params.yml -resume -with-dag flowchart.mmd
+nextflow run main.nf -params-file params.yml -resume -with-dag flowchart.mmd
 ```
 
 ## Analysis steps
