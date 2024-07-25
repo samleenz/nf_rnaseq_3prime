@@ -43,7 +43,7 @@ workflow {
   
 
     // pass one
-    (star_align_pass1_ch, star_junctions_pass1_ch, star_logs_pass1_ch) = RUN_STAR_ALIGN(
+    (star_align_pass1_ch, star_junctions_pass1_ch, star_logs_pass1_ch) = RUN_STAR_ALIGN_SE(
         trimmed_reads_ch,
         star_idx_ch,
         params.read_len,
@@ -57,7 +57,7 @@ workflow {
     // star_junctions.view()
 
     // pass two
-    (star_align_pass2_ch, star_junctions_pass2_ch, star_logs_pass2_ch) = RUN_STAR_ALIGN_2PASS(
+    (star_align_pass2_ch, star_junctions_pass2_ch, star_logs_pass2_ch) = RUN_STAR_ALIGN_SE_2PASS(
         trimmed_reads_ch,
         star_idx_ch,
         params.read_len,
