@@ -1,4 +1,4 @@
-process RUN_FEATURECOUNTS {
+process RUN_FEATURECOUNTS_SE {
     
     cpus {4 * task.attempt}
     memory {32.GB * task.attempt}
