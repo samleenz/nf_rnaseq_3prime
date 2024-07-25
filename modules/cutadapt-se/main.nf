@@ -17,6 +17,7 @@ process RUN_TRIM_READS_SE {
     cutadapt \
         -m 20 \
         -O 20 \
+        -j $task.cpus \
         -a "polyA=A{20}" \
         -a "QUALITY=G{20}" \
         -n 2 \
@@ -24,14 +25,16 @@ process RUN_TRIM_READS_SE {
     cutadapt \
         -m 20 \
         -O 3 \
+        -j $task.cpus \
         --nextseq-trim=10 \
-        -a "r1adapter=A{18}AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC;min_overlap=3;max_error_rate=0.100000" – | \
+        -a "r1adapter=A{18}AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC;min_overlap=3;max_error_rate=0.100000" - | \
     cutadapt \
         -m 20 \
         -O 20 \
+        -j $task.cpus \
         -g "r1adapter=AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC;min_overlap=20" \
         --discard-trimmed \
-        -o $out1 –
+        -o $out1 -
     """
 
 }
