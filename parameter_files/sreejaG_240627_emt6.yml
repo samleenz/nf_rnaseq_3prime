@@ -6,7 +6,7 @@ store_dir: "/vast/projects/ncla/ensembl112/nextflow"
   
 transcriptome: "/vast/projects/ncla/ensembl112/Mus_musculus.GRCm39.cdna.all.fa.gz"
 genome: "/vast/projects/ncla/ensembl112/Mus_musculus.GRCm39.dna_sm.primary_assembly.fa"
-gtf: "/vast/projects/ncla/ensembl112/Mus_musculus.GRCm39.112.chr.gtf.gz"
+gtf: "/vast/projects/ncla/ensembl112/Mus_musculus.GRCm39.112.chr.gtf"
 tx_ver: "mm_ensembl112"
 juncs: "NO_FILE"
   
