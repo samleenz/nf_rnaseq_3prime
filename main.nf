@@ -9,6 +9,7 @@ include { RUN_FASTQC } from "${params.module_dir}/fastqc"
 include { RUN_MULTIQC } from "${params.module_dir}/multiqc"
 include { RUN_STAR_GENOME_GENERATE } from "${params.module_dir}/star-index" 
 include { RUN_FEATURECOUNTS_COMBINE } from "${params.module_dir}/featureCounts-combine"
+include { RUN_SUMMARIZED_EXPERIMENT } from "${params.module_dir}/summarizedExperiment"
 
 
 include { RUN_TRIM_READS_SE } from "./modules/cutadapt-se" 
@@ -73,6 +74,8 @@ workflow {
     )
 
     fc_combine_ch = RUN_FEATURECOUNTS_COMBINE(fc_counts_ch.collect())
+
+    // SUMMARIZED EXPERIMENT -------
 
     make_se_ch = RUN_SUMMARIZED_EXPERIMENT(
         fc_combine_ch
