@@ -32,20 +32,6 @@ process RUN_TRIM_READS_SE {
         -g "r1adapter=AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC;min_overlap=20" \
         --discard-trimmed \
         -o $out1 –
-
-
-    cutadapt \
-        -a AGATCGGAAGAG \
-        -A AGATCGGAAGAG \
-        -j $task.cpus \
-        -q 20 \
-        -o $out1 \
-        -p $out2 \
-        -m 15 \
-        ${reads[0]} \
-        ${reads[1]} 
-
-
     """
 
 }
