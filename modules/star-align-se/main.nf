@@ -1,4 +1,4 @@
-process RUN_STAR_ALIGN {
+process RUN_STAR_ALIGN_SE {
     
     cpus 8
     memory "48.G"
