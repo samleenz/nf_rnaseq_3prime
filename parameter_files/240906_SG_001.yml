@@ -1,4 +1,4 @@
-# Parameters file for 290906_SG_001
+# Parameters file for 240906_SG_001
 # 2024-10-01
 
 module_dir: "/stornext/Bioinf/data/lab_davis/lee.sa/nf_modules"
@@ -11,5 +11,5 @@ tx_ver: "ens108"
 juncs: "NO_FILE"
   
 read_len: 100
-project: "290906_SG_001"
+project: "240906_SG_001"
 samplesheet: "/stornext/Bioinf/data/lab_davis/lee.sa/data/merino_lab/240906_VL00598_27_AAFLMV7M5/240906_SG_001_samplesheet.csv"
