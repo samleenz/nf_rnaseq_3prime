@@ -1,0 +1,15 @@
+# Parameters file for 290906_SG_001
+# 2024-10-01
+
+module_dir: "/stornext/Bioinf/data/lab_davis/lee.sa/nf_modules"
+store_dir: "/vast/projects/ncla/ensembl108/nextflow"
+  
+transcriptome: "/vast/projects/ncla/ensembl108/Homo_sapiens.GRCh38.cdna.all.fa.gz"
+genome: "/vast/projects/ncla/ensembl108/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+gtf: "/vast/projects/ncla/ensembl108/Homo_sapiens.GRCh38.108.chr.gtf"
+tx_ver: "ens108"
+juncs: "NO_FILE"
+  
+read_len: 100
+project: "290906_SG_001"
+samplesheet: "/stornext/Bioinf/data/lab_davis/lee.sa/data/merino_lab/240906_VL00598_27_AAFLMV7M5/240906_SG_001_samplesheet.csv"
