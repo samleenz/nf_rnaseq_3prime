@@ -1,0 +1,15 @@
+# Parameters file for 240906_YW_001
+# 2024-11-26
+
+module_dir: "/data/Analysis/Lab_TPH/lee_s/projects/nf_modules"
+store_dir: "/data/Analysis/Lab_TPH/references/ensembl108/nextflow"
+  
+transcriptome: "/data/Analysis/Lab_TPH/references/ensembl108/Homo_sapiens.GRCh38.cdna.all.fa.gz"
+genome: "/data/Analysis/Lab_TPH/references/ensembl108/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+gtf: "/data/Analysis/Lab_TPH/references/ensembl108/Homo_sapiens.GRCh38.108.chr.gtf"
+tx_ver: "ens108"
+juncs: "NO_FILE"
+  
+read_len: 100
+project: "240906_YW_001"
+samplesheet: "/data/Analysis/Lab_TPH/datasets_raw/bulk090525_YW/bulk090525_YW_samplesheet.csv"
